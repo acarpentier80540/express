@@ -86,19 +86,19 @@ const database = require("./database");
     const sqlValues = [];
   
     if (req.query.language != null) {
-      sql += " ?language=English";
+      sql += " where language= ?";
       sqlValues.push(req.query.language);
     }
   
     if (req.query.city != null) {
-      sql += " ?city=Paris";
+      sql += "  where city= ?";
       sqlValues.push(req.query.city);
     }
 
     database
       .query(sql, sqlValues)
-      .then(([movies]) => {
-        res.json(movies);
+      .then(([users]) => {
+        res.json(users);
       })
       .catch((err) => {
         console.error(err);

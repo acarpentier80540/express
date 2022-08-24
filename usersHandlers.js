@@ -91,10 +91,15 @@ const database = require("./database");
     }
   
     if (req.query.city != null) {
+      sql += " and city = ?";
+      sqlValues.push(req.query.city);
+    }
+    else if (req.query.city != null) {
       sql += "  where city= ?";
       sqlValues.push(req.query.city);
     }
 
+    
     database
       .query(sql, sqlValues)
       .then(([users]) => {

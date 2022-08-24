@@ -24,6 +24,10 @@ app.get("/api/users/:id", usersHandlers.getUsersById);
 //express 3
 app.post("/api/movies", movieHandlers.postMovie);
 app.post("/api/users", usersHandlers.postUsers);
+//express 4
+app.put("/api/movies/:id", movieHandlers.updateMovie);
+app.put("/api/users/:id", usersHandlers.updateUsers);
+
 
 
 app.listen(port, (err) => {

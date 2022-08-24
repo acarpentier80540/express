@@ -27,6 +27,9 @@ app.post("/api/users", usersHandlers.postUsers);
 //express 4
 app.put("/api/movies/:id", movieHandlers.updateMovie);
 app.put("/api/users/:id", usersHandlers.updateUsers);
+//express 5
+app.delete("/api/movies/:id", movieHandlers.deleteMovie);
+app.delete("/api/users", usersHandlers.deleteUsers);
 
 
 
